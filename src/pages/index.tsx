@@ -1,115 +1,214 @@
+import Layout from "@/components/Layout";
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import ImageCarousel from "@/components/ImageCarousel";
+import Head from "next/head";
+import Script from "next/script";
+import Link from "next/link";
+import {
+  BoltIcon,
+  ChartBarIcon,
+  UsersIcon,
+} from "@heroicons/react/24/outline";
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
+    <Layout
+      title="Salle de sport Anglet – Body Transformation"
+      description="Body Transformation Anglet : coaching sportif, suivi nutritionnel, ambiance conviviale et résultats durables."
     >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+      {/* JSON-LD pour SEO local */}
+      <Head>
+        <Script
+          type="application/ld+json"
+          id="ld-healthclub"
+          strategy="beforeInteractive"
+        >
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HealthClub",
+            name: "Body Transformation",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "10 rue Jules Védrines",
+              addressLocality: "Anglet",
+              postalCode: "64600",
+              addressCountry: "FR",
+            },
+            url: "https://www.body-transformation.fr",
+            telephone: "+33658881560",
+            openingHours: "Mo-Fr 09:00-20:30, Sa 09:00-12:15",
+            image: "https://www.body-transformation.fr/01003167.JPG",
+            description:
+              "Salle de sport Anglet : coaching sportif, suivi nutritionnel, ambiance conviviale et résultats durables.",
+          })}
+        </Script>
+      </Head>
+
+      {/* Bandeau Hero */}
+      <section className="relative w-full h-[75vh]">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/01003167.JPG"
+          alt="Salle Body Transformation à Anglet"
+          fill
+          style={{ objectFit: "cover" }}
+          className="brightness-75"
           priority
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg mb-4">
+            Body Transformation Anglet
+          </h1>
+          <p className="text-lg md:text-2xl text-white/90 max-w-3xl mb-6">
+            Coaching sportif & diététique <br className="hidden md:block" />
+            sur-mesure, pour des résultats rapides et durables.
+          </p>
+          <Link
+            href="/contact"
+            style={{ backgroundColor: "#F97316" }}
+            className="text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Séance d’essai gratuite
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* À propos */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto text-center space-y-4 px-4">
+          <h2 className="text-3xl font-bold">Votre club & votre équipe</h2>
+          <p className="text-gray-700">
+            Implanté au cœur d’Anglet, Body Transformation c’est 250 m² de matériel
+            haut de gamme, un coin détente, et deux coachs diplômés (sport &
+            diététique) à votre écoute. Ouvert du lundi au vendredi de 9h à 20h20 et le samedi de 9h à 12h.
+          </p>
+        </div>
+      </section>
+
+      {/* Nos prestations */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Nos prestations
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+              <BoltIcon className="w-8 h-8 text-[#F97316] mb-3 mx-auto" />
+              <h3 className="text-xl font-semibold mb-2 text-center">
+                Coaching Sportif
+              </h3>
+              <p className="text-gray-600">
+                Cours limités à 8 personnes pour un suivi personnalisé : fitness,
+                muscu, cardio, posture, rééducation.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+              <ChartBarIcon className="w-8 h-8 text-[#F97316] mb-3 mx-auto" />
+              <h3 className="text-xl font-semibold mb-2 text-center">
+                Consultations Diététiques
+              </h3>
+              <p className="text-gray-600">
+                Bilan nutritionnel et suivi individuel avec notre diététicienne,
+                pour optimiser vos résultats.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition">
+              <UsersIcon className="w-8 h-8 text-[#F97316] mb-3 mx-auto" />
+              <h3 className="text-xl font-semibold mb-2 text-center">
+                Vente de Compléments
+              </h3>
+              <p className="text-gray-600">
+                Protéines, céréales, thés… sélection de qualité pour booster vos
+                performances, en ligne et sur place.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Galerie */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 text-center mb-8">
+          <h2 className="text-3xl font-bold">Visitez notre salle</h2>
+        </div>
+        <div className="container mx-auto px-4">
+          <ImageCarousel />
+        </div>
+      </section>
+
+      {/* Pourquoi nous choisir */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-12">Pourquoi nous choisir ?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition">
+              <BoltIcon className="w-12 h-12 text-[#F97316] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">
+                Coaching personnalisé
+              </h3>
+              <p className="text-gray-600">
+                Programme sur-mesure alliant fitness, musculation et suivi
+                diététique.
+              </p>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition">
+              <ChartBarIcon className="w-12 h-12 text-[#F97316] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Résultats rapides</h3>
+              <p className="text-gray-600">
+                Transformations visibles dès 4 à 6 semaines.
+              </p>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-8 shadow-sm hover:shadow-md transition">
+              <UsersIcon className="w-12 h-12 text-[#F97316] mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">
+                Ambiance conviviale
+              </h3>
+              <p className="text-gray-600">
+                Groupes limités à 8 pour un climat motivant et bienveillant.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Témoignages */}
+      <section className="bg-gray-100 py-16 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-2xl font-bold mb-10">Témoignages de nos adhérents</h2>
+          <div className="grid md:grid-cols-3 gap-6 text-left">
+            {[
+              {
+                text: "Une salle en tout point parfaite ! Deux coachs « Romain » qui vous suivent selon vos besoins, une super ambiance, des adhérents motivés… Sans oublier Clémence et ses précieux conseils en diététique ! La meilleure salle du Pays Basque, c’est certain.",
+                author: "Paul P.",
+              },
+              {
+                text: "Grosse ambiance à la salle et super professionnels ! Les Romains sont toujours souriants et motivants. En un mois et demi avec Clémence, j’ai perdu de la masse grasse et pris du muscle. Plus en forme que jamais !",
+                author: "David R.M.",
+              },
+              {
+                text: "Cela fait plus de 2 ans que je fréquente cette salle. Une équipe bienveillante, des coachs pédagogues et une ambiance qui donne envie de revenir. Merci à Clémence pour ses conseils diététiques !",
+                author: "Marie-Claire R.",
+              },
+            ].map((t, i) => (
+              <div key={i} className="bg-white p-6 rounded-lg shadow">
+                <p className="italic text-gray-700">"{t.text}"</p>
+                <p className="mt-4 font-semibold text-sm text-gray-500">– {t.author}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA final */}
+      <section className="py-16 bg-white text-center">
+        <h2 className="text-3xl font-bold mb-6">Prêt à commencer ?</h2>
+        <Link
+          href="/contact"
+          style={{ backgroundColor: "#F97316" }}
+          className="text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Réservez votre séance d’essai
+        </Link>
+      </section>
+    </Layout>
   );
 }

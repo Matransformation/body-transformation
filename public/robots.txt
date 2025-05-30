@@ -1,0 +1,7 @@
+# robots.txt for https://www.body-transformation.fr/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.body-transformation.fr/sitemap.xml
+Host: https://www.body-transformation.fr

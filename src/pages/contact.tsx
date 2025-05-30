@@ -11,6 +11,31 @@ const Contact: NextPage = () => {
           name="description"
           content="Contactez la salle de sport Body Transformation à Anglet pour toute demande d'information ou prise de rendez-vous."
         />
+        <link rel="canonical" href="https://www.body-transformation.fr/contact" />
+        <meta property="og:title" content="Contact - Body Transformation Anglet" />
+        <meta
+          property="og:description"
+          content="Contactez la salle de sport Body Transformation à Anglet pour toute demande d'information ou prise de rendez-vous."
+        />
+        <meta
+          property="og:image"
+          content="https://www.body-transformation.fr/01003167.JPG"
+        />
+        <meta
+          property="og:url"
+          content="https://www.body-transformation.fr/contact"
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact - Body Transformation Anglet" />
+        <meta
+          name="twitter:description"
+          content="Contactez la salle de sport Body Transformation à Anglet pour toute demande d'information ou prise de rendez-vous."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.body-transformation.fr/01003167.JPG"
+        />
       </Head>
 
       <Navbar />
@@ -24,7 +49,6 @@ const Contact: NextPage = () => {
           Une question ? Besoin d’un renseignement ? Contactez-nous par mail ou venez directement à la salle.
         </p>
 
-        {/* Bouton email sans Tailwind */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <a
             href="mailto:contact@romain-fitness.com"
@@ -46,18 +70,34 @@ const Contact: NextPage = () => {
           </a>
         </div>
 
-        {/* Coordonnées */}
         <div style={{ textAlign: 'center', color: '#374151', marginBottom: '3rem' }}>
-          <p style={{ marginBottom: '0.5rem', fontWeight: '500' }}>📍 13 Rue Jules Védrines, 64600 Anglet</p>
+          <p style={{ marginBottom: '0.5rem', fontWeight: '500' }}>
+            📍 10 Rue Jules Védrines, 64600 Anglet
+          </p>
           <p style={{ marginBottom: '0.5rem' }}>📞 06 58 88 15 60</p>
           <p>✉️ contact@romain-fitness.com</p>
         </div>
 
-        {/* Carte Google Maps */}
-        <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+            paddingBottom: '56.25%',
+            borderRadius: '1rem',
+            overflow: 'hidden',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+          }}
+        >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.7576427571485!2d-1.5024630073617393!3d43.46565669662544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd513f2801289467%3A0x986ff976103f3ae0!2sBody%20Transformation%20-%20salle%20de%20sport%20Anglet!5e0!3m2!1sfr!2sfr!4v1748587477563!5m2!1sfr!2sfr"
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              border: 0,
+            }}
             allowFullScreen
             loading="lazy"
           />

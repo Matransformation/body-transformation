@@ -1,6 +1,7 @@
 // src/pages/tarifs.tsx
 import Layout from "@/components/Layout";
 import Head from "next/head";
+import Script from "next/script";
 import Link from "next/link";
 
 type Plan = {
@@ -110,18 +111,53 @@ const freePack = [
 ];
 
 export default function Tarifs() {
-  return (
-    <Layout
-      title="Nos tarifs – Body Transformation Anglet"
-      description="Formules Coaching en groupe ou Accès libre, abonnements et carnets de séances à prix dégressifs."
-    >
-      <Head>
-        <meta property="og:title" content="Nos tarifs – Body Transformation Anglet" />
-        <meta
-          property="og:description"
-          content="Coaching en groupe (8 pers. max.) ou accès libre. Abonnements mensuels dès 24,99 € et carnets de séances."
-        />
-      </Head>
+    return (
+      <Layout
+        title="Nos tarifs – Body Transformation Anglet"
+        description="Formules Coaching en groupe ou Accès libre, abonnements et carnets de séances à prix dégressifs."
+      >
+        <Head>
+          {/* JSON-LD : HealthClub */}
+          <Script
+            type="application/ld+json"
+            id="ld-healthclub-tarifs"
+            strategy="beforeInteractive"
+          >
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HealthClub",
+              name: "Body Transformation",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "10 rue Jules Védrines",
+                addressLocality: "Anglet",
+                postalCode: "64600",
+                addressCountry: "FR",
+              },
+              url: "https://www.body-transformation.fr/tarifs",
+              telephone: "+33658881560",
+              description:
+                "Tarifs coaching sportif à Anglet. Formules en groupe ou accès libre dès 24,99 €/mois. Carnets de séances disponibles.",
+            })}
+          </Script>
+  
+          {/* SEO classique + OpenGraph */}
+          <link rel="canonical" href="https://www.body-transformation.fr/tarifs" />
+          <meta property="og:title" content="Nos tarifs – Body Transformation Anglet" />
+          <meta
+            property="og:description"
+            content="Coaching en groupe (8 pers. max.) ou accès libre. Abonnements dès 24,99 € et carnets de séances à prix dégressifs."
+          />
+          <meta
+            property="og:image"
+            content="https://www.body-transformation.fr/images/tarifs-cover.jpg"
+          />
+          <meta
+            property="og:url"
+            content="https://www.body-transformation.fr/tarifs"
+          />
+          <meta property="og:type" content="website" />
+        </Head>
 
       {/* En-tête */}
       <section className="py-16 bg-white text-center px-4">

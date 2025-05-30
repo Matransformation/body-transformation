@@ -18,31 +18,43 @@ export default function Home() {
     >
       {/* JSON-LD pour SEO local */}
       <Head>
-        <Script
-          type="application/ld+json"
-          id="ld-healthclub"
-          strategy="beforeInteractive"
-        >
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HealthClub",
-            name: "Body Transformation",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "10 rue Jules Védrines",
-              addressLocality: "Anglet",
-              postalCode: "64600",
-              addressCountry: "FR",
-            },
-            url: "https://www.body-transformation.fr",
-            telephone: "+33658881560",
-            openingHours: "Mo-Fr 09:00-20:30, Sa 09:00-12:15",
-            image: "https://www.body-transformation.fr/01003167.JPG",
-            description:
-              "Salle de sport Anglet : coaching sportif, suivi nutritionnel, ambiance conviviale et résultats durables.",
-          })}
-        </Script>
-      </Head>
+  <Script
+    type="application/ld+json"
+    id="ld-healthclub"
+    strategy="beforeInteractive"
+  >
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HealthClub",
+      name: "Body Transformation",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "10 rue Jules Védrines",
+        addressLocality: "Anglet",
+        postalCode: "64600",
+        addressCountry: "FR",
+      },
+      url: "https://www.body-transformation.fr",
+      telephone: "+33658881560",
+      openingHours: "Mo-Fr 09:00-20:30, Sa 09:00-12:15",
+      image: "https://www.body-transformation.fr/01003167.JPG",
+      description:
+        "Salle de sport Anglet : coaching sportif, suivi nutritionnel, ambiance conviviale et résultats durables.",
+    })}
+  </Script>
+
+  {/* Balises SEO spécifiques à l’accueil */}
+  <link rel="canonical" href="https://www.body-transformation.fr" />
+  <meta property="og:title" content="Salle de sport Anglet – Body Transformation" />
+  <meta
+    property="og:description"
+    content="Coaching sportif et suivi diététique sur-mesure à Anglet. Résultats rapides, ambiance conviviale."
+  />
+  <meta property="og:image" content="https://www.body-transformation.fr/01003167.JPG" />
+  <meta property="og:url" content="https://www.body-transformation.fr" />
+  <meta property="og:type" content="website" />
+</Head>
+
 
       {/* Bandeau Hero */}
       <section className="relative w-full h-[75vh]">

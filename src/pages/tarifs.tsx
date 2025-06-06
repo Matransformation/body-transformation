@@ -166,11 +166,34 @@ export default function Tarifs() {
           Coaching en groupe (8 personnes max.) ou accès libre aux installations.<br />
           Abonnements mensuels dès 24,99 € et carnets de séances dégressifs.
         </p>
+        <p className="text-gray-700 max-w-2xl mx-auto mt-4">
+  Lors de votre <strong>séance d’essai</strong>, nous commençons toujours par un <strong>entretien personnalisé</strong> pour comprendre vos <strong>objectifs</strong>, vos <strong>disponibilités</strong> et d’éventuelles <strong>pathologies</strong>. Cela nous permet d’adapter vos entraînements dès le départ. <br />
+  Même en petit groupe, <strong>chacun suit un programme individualisé</strong> selon son niveau et ses besoins.
+</p>
+
       </section>
+      <section className="py-12 bg-orange-50 text-center px-4 mt-1 mb-12">
+  <h2 className="text-2xl font-bold mb-4">Tarif préférentiel – 10% de remise</h2>
+  <p className="text-gray-700 max-w-2xl mx-auto">
+    Une remise de <strong>10%</strong> est proposée aux <strong>patients de Clémence</strong>, aux <strong>étudiants</strong>, aux <strong>couples</strong> et aux <strong>personnes en recherche d’emploi</strong>.<br />
+    Mentionnez-le lors de votre séance d’essai !
+  </p>
+</section>
+<section className="py-12 bg-white text-center px-4">
+  <h2 className="text-2xl font-bold mb-4">Coaching privatisé</h2>
+  <p className="text-gray-700 max-w-2xl mx-auto">
+    Vous souhaitez réserver un créneau <strong>rien que pour vous</strong> ?<br />
+    Il est possible de <strong>privatiser une séance</strong> pour 1, 2 ou 3 personnes.
+  </p>
+  <p className="text-2xl font-bold text-[#F97316] mt-4">60 € / séance</p>
+  <p className="text-gray-600 max-w-2xl mx-auto mt-2 text-sm">
+    Peu importe le nombre de participants, le tarif reste fixe.
+  </p>
+</section>
 
       {/* Coaching en groupe */}
       <section className="px-4 pb-16">
-        <h2 className="text-2xl font-bold text-center mb-8">Coaching en groupe</h2>
+        <h2 className="text-2xl font-bold text-center mb-8">Coaching en groupe (et pilates)</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {groupPlans.map((plan) => (
             <div

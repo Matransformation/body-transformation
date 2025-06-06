@@ -3,11 +3,20 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/outline";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen((o) => !o);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const [isSubMenuMobileOpen, setIsSubMenuMobileOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen((prev) => !prev);
+  const toggleSubMenu = () => setIsSubMenuOpen((prev) => !prev);
+  const toggleSubMenuMobile = () => setIsSubMenuMobileOpen((prev) => !prev);
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -24,7 +33,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop menu */}
-        <ul className="hidden md:flex gap-6 text-sm font-medium">
+        <ul className="hidden md:flex gap-6 text-sm font-medium items-center">
           <li>
             <Link href="/" className="hover:text-primary transition">
               Accueil
@@ -33,6 +42,16 @@ export default function Navbar() {
           <li>
             <Link href="/coaching" className="hover:text-primary transition">
               Coaching
+            </Link>
+          </li>
+          <li>
+            <Link href="/dietetique" className="hover:text-primary transition">
+              Diététique
+            </Link>
+          </li>
+          <li>
+            <Link href="/pilates" className="hover:text-primary transition">
+              Pilates
             </Link>
           </li>
           <li>
@@ -50,28 +69,56 @@ export default function Navbar() {
               Témoignages
             </Link>
           </li>
-          <li style={{ display: 'flex', alignItems: 'center' }}>
-  <Link
-    href="/contact"
-    style={{
-      backgroundColor: '#F97316',
-      color: 'white',
-      padding: '0.4rem 1rem',
-      borderRadius: '8px',
-      fontWeight: 600,
-      fontSize: '0.875rem',
-      textDecoration: 'none',
-      lineHeight: '1',
-      display: 'inline-block',
-    }}
-  >
-    Contact
-  </Link>
-</li>
 
+          {/* Autres services - Desktop Dropdown */}
+          <li className="relative">
+            <button
+              onClick={toggleSubMenu}
+              className="hover:text-primary transition flex items-center gap-1 focus:outline-none"
+            >
+              Autres services
+              <ChevronDownIcon
+                className={`w-4 h-4 transition-transform ${
+                  isSubMenuOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {isSubMenuOpen && (
+              <ul className="absolute bg-white border rounded shadow-lg mt-2 z-50 min-w-[180px] right-0">
+                <li>
+                  <Link
+                    href="/coaching-prive"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setIsSubMenuOpen(false)}
+                  >
+                    Coaching privé
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/evenements"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setIsSubMenuOpen(false)}
+                  >
+                    Évènements
+                  </Link>
+                </li>
+              </ul>
+            )}
+          </li>
+
+          {/* Contact button */}
+          <li>
+            <Link
+              href="/contact"
+              className="bg-[#F97316] text-white px-4 py-2 rounded-lg font-semibold text-sm hover:opacity-90 transition"
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
 
-        {/* Mobile hamburger + MENU */}
+        {/* Mobile hamburger */}
         <button
           onClick={toggleMenu}
           className="md:hidden flex items-center p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary"
@@ -86,7 +133,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu drawer */}
+      {/* Mobile menu */}
       {isOpen && (
         <div
           className="md:hidden fixed inset-0 z-40 bg-white/90 backdrop-blur-sm"
@@ -96,50 +143,60 @@ export default function Navbar() {
             className="relative h-full flex flex-col items-center justify-center space-y-6 text-lg font-medium"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Bouton de fermeture stylisé */}
+            {/* Fermer bouton */}
             <button
               onClick={toggleMenu}
-              className="absolute top-4 right-4 p-2 rounded-full bg-[#F97316] shadow focus:outline-none"
+              className="absolute top-4 right-4 p-2 rounded-full bg-[#F97316] shadow"
               aria-label="Fermer le menu"
             >
               <XMarkIcon className="w-6 h-6 text-white" />
             </button>
 
-            <Link
-              href="/"
-              className="hover:text-primary transition"
-              onClick={toggleMenu}
-            >
+            <Link href="/" onClick={toggleMenu}>
               Accueil
             </Link>
-            <Link
-              href="/coaching"
-              className="hover:text-primary transition"
-              onClick={toggleMenu}
-            >
+            <Link href="/dietetique" onClick={toggleMenu}>
+              Diététique
+            </Link>
+            <Link href="/pilates" onClick={toggleMenu}>
+              Pilates
+            </Link>
+            <Link href="/coaching" onClick={toggleMenu}>
               Coaching
             </Link>
-            <Link
-              href="/planning"
-              className="hover:text-primary transition"
-              onClick={toggleMenu}
-            >
+            <Link href="/planning" onClick={toggleMenu}>
               Planning
             </Link>
-            <Link
-              href="/tarifs"
-              className="hover:text-primary transition"
-              onClick={toggleMenu}
-            >
+            <Link href="/tarifs" onClick={toggleMenu}>
               Tarifs
             </Link>
-            <Link
-              href="/temoignages"
-              className="hover:text-primary transition"
-              onClick={toggleMenu}
-            >
+            <Link href="/temoignages" onClick={toggleMenu}>
               Témoignages
             </Link>
+
+            {/* Autres services - Mobile */}
+            <button
+              onClick={toggleSubMenuMobile}
+              className="flex items-center gap-1 focus:outline-none"
+            >
+              Autres services
+              <ChevronDownIcon
+                className={`w-4 h-4 transition-transform ${
+                  isSubMenuMobileOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {isSubMenuMobileOpen && (
+              <div className="flex flex-col items-center space-y-2">
+                <Link href="/coaching-prive" onClick={toggleMenu}>
+                  Coaching privé
+                </Link>
+                <Link href="/evenements" onClick={toggleMenu}>
+                  Évènements
+                </Link>
+              </div>
+            )}
+
             <Link
               href="/contact"
               className="bg-[#F97316] text-white px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition"

@@ -1,4 +1,3 @@
-// src/pages/tarifs.tsx
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Script from "next/script";
@@ -111,53 +110,53 @@ const freePack = [
 ];
 
 export default function Tarifs() {
-    return (
-      <Layout
-        title="Nos tarifs – Body Transformation Anglet"
-        description="Formules Coaching en groupe ou Accès libre, abonnements et carnets de séances à prix dégressifs."
-      >
-        <Head>
-          {/* JSON-LD : HealthClub */}
-          <Script
-            type="application/ld+json"
-            id="ld-healthclub-tarifs"
-            strategy="beforeInteractive"
-          >
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "HealthClub",
-              name: "Body Transformation",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "10 rue Jules Védrines",
-                addressLocality: "Anglet",
-                postalCode: "64600",
-                addressCountry: "FR",
-              },
-              url: "https://www.body-transformation.fr/tarifs",
-              telephone: "+33658881560",
-              description:
-                "Tarifs coaching sportif à Anglet. Formules en groupe ou accès libre dès 24,99 €/mois. Carnets de séances disponibles.",
-            })}
-          </Script>
-  
-          {/* SEO classique + OpenGraph */}
-          <link rel="canonical" href="https://www.body-transformation.fr/tarifs" />
-          <meta property="og:title" content="Nos tarifs – Body Transformation Anglet" />
-          <meta
-            property="og:description"
-            content="Coaching en groupe (8 pers. max.) ou accès libre. Abonnements dès 24,99 € et carnets de séances à prix dégressifs."
-          />
-          <meta
-            property="og:image"
-            content="https://www.body-transformation.fr/images/tarifs-cover.jpg"
-          />
-          <meta
-            property="og:url"
-            content="https://www.body-transformation.fr/tarifs"
-          />
-          <meta property="og:type" content="website" />
-        </Head>
+  return (
+    <Layout
+      title="Nos tarifs – Body Transformation Anglet"
+      description="Formules Coaching en groupe ou Accès libre, abonnements et carnets de séances à prix dégressifs."
+    >
+      <Head>
+        {/* JSON-LD : HealthClub */}
+        <Script
+          type="application/ld+json"
+          id="ld-healthclub-tarifs"
+          strategy="beforeInteractive"
+        >
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HealthClub",
+            name: "Body Transformation",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "10 rue Jules Védrines",
+              addressLocality: "Anglet",
+              postalCode: "64600",
+              addressCountry: "FR",
+            },
+            url: "https://www.body-transformation.fr/tarifs",
+            telephone: "+33658881560",
+            description:
+              "Tarifs coaching sportif à Anglet. Formules en groupe ou accès libre dès 24,99 €/mois. Carnets de séances disponibles.",
+          })}
+        </Script>
+
+        {/* SEO classique + OpenGraph */}
+        <link rel="canonical" href="https://www.body-transformation.fr/tarifs" />
+        <meta property="og:title" content="Nos tarifs – Body Transformation Anglet" />
+        <meta
+          property="og:description"
+          content="Coaching en groupe (8 pers. max.) ou accès libre. Abonnements dès 24,99 € et carnets de séances à prix dégressifs."
+        />
+        <meta
+          property="og:image"
+          content="https://www.body-transformation.fr/images/tarifs-cover.jpg"
+        />
+        <meta
+          property="og:url"
+          content="https://www.body-transformation.fr/tarifs"
+        />
+        <meta property="og:type" content="website" />
+      </Head>
 
       {/* En-tête */}
       <section className="py-16 bg-white text-center px-4">
@@ -167,29 +166,39 @@ export default function Tarifs() {
           Abonnements mensuels dès 24,99 € et carnets de séances dégressifs.
         </p>
         <p className="text-gray-700 max-w-2xl mx-auto mt-4">
-  Lors de votre <strong>séance d’essai</strong>, nous commençons toujours par un <strong>entretien personnalisé</strong> pour comprendre vos <strong>objectifs</strong>, vos <strong>disponibilités</strong> et d’éventuelles <strong>pathologies</strong>. Cela nous permet d’adapter vos entraînements dès le départ. <br />
-  Même en petit groupe, <strong>chacun suit un programme individualisé</strong> selon son niveau et ses besoins.
-</p>
-
+          Lors de votre <strong>séance d’essai</strong>, nous commençons toujours par un <strong>entretien personnalisé</strong> pour comprendre vos <strong>objectifs</strong>, vos <strong>disponibilités</strong> et d’éventuelles <strong>pathologies</strong>. Cela nous permet d’adapter vos entraînements dès le départ. <br />
+          Même en petit groupe, <strong>chacun suit un programme individualisé</strong> selon son niveau et ses besoins.
+        </p>
       </section>
-      <section className="py-12 bg-orange-50 text-center px-4 mt-1 mb-12">
-  <h2 className="text-2xl font-bold mb-4">Tarif préférentiel – 10% de remise</h2>
-  <p className="text-gray-700 max-w-2xl mx-auto">
-    Une remise de <strong>10%</strong> est proposée aux <strong>patients de Clémence</strong>, aux <strong>étudiants</strong>, aux <strong>couples</strong> et aux <strong>personnes en recherche d’emploi</strong>.<br />
-    Mentionnez-le lors de votre séance d’essai !
-  </p>
-</section>
-<section className="py-12 bg-white text-center px-4">
-  <h2 className="text-2xl font-bold mb-4">Coaching privatisé</h2>
-  <p className="text-gray-700 max-w-2xl mx-auto">
-    Vous souhaitez réserver un créneau <strong>rien que pour vous</strong> ?<br />
-    Il est possible de <strong>privatiser une séance</strong> pour 1, 2 ou 3 personnes.
-  </p>
-  <p className="text-2xl font-bold text-[#F97316] mt-4">60 € / séance</p>
-  <p className="text-gray-600 max-w-2xl mx-auto mt-2 text-sm">
-    Peu importe le nombre de participants, le tarif reste fixe.
-  </p>
-</section>
+
+      {/* Offre Transformation Illimitée */}
+      <section className="px-4 py-16 bg-gradient-to-r from-orange-100 to-orange-50 text-center mb-12 rounded-xl shadow max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold mb-2 text-[#F97316]">💎 Offre Transformation Illimitée (6mois minimum)</h2>
+        <p className="text-gray-700 max-w-2xl mx-auto mb-6">
+          Le pack le plus complet pour atteindre vos objectifs : <br />
+          <strong>accès illimité aux séances</strong> + <strong>suivi nutrition</strong>.
+        </p>
+        <ul className="space-y-2 text-lg text-gray-700 mb-6 text-left max-w-md mx-auto">
+          <li>✅ Accès illimité à toutes les séances de coaching</li>
+          <li>✅ Première consultation nutrition incluse (valeur 60 €)</li>
+          <li>✅ 1 suivi personnalisé chaque mois (valeur 35 €)</li>
+          <li>✅ Un accompagnement sport + nutrition pour des résultats rapides</li>
+        </ul>
+        <p className="text-2xl font-bold text-[#F97316] mb-2">99 €/mois</p>
+        <p className="text-gray-600 mb-6">
+          Valeur réelle : <s>154 €/mois</s> → <span className="font-semibold">99 €/mois seulement</span>
+        </p>
+        <span className="inline-block bg-yellow-300 text-yellow-900 font-semibold px-4 py-1 rounded-full mb-4">
+          ⭐ Offre recommandée
+        </span>
+        <br />
+        <Link
+          href="/contact"
+          className="inline-block bg-[#F97316] text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition"
+        >
+          Je demande ma séance d’essai
+        </Link>
+      </section>
 
       {/* Coaching en groupe */}
       <section className="px-4 pb-16">
@@ -208,10 +217,7 @@ export default function Tarifs() {
               </p>
               <ul className="space-y-1 mb-4">
                 {plan.tiers.map((tier) => (
-                  <li
-                    key={tier.duration}
-                    className="flex justify-between text-gray-700"
-                  >
+                  <li key={tier.duration} className="flex justify-between text-gray-700">
                     <span>{tier.duration}</span>
                     <span>{tier.price}</span>
                   </li>
@@ -231,18 +237,13 @@ export default function Tarifs() {
               key={plan.sessionsPerWeek}
               className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
             >
-              <h3 className="text-xl font-semibold mb-2 text-center">
-                {plan.sessionsPerWeek}
-              </h3>
+              <h3 className="text-xl font-semibold mb-2 text-center">{plan.sessionsPerWeek}</h3>
               <p className="text-2xl font-bold text-[#F97316] mb-4 text-center">
                 À partir de {plan.startingPrice}
               </p>
               <ul className="space-y-1 mb-4">
                 {plan.tiers.map((tier) => (
-                  <li
-                    key={tier.duration}
-                    className="flex justify-between text-gray-700"
-                  >
+                  <li key={tier.duration} className="flex justify-between text-gray-700">
                     <span>{tier.duration}</span>
                     <span>{tier.price}</span>
                   </li>
@@ -256,46 +257,30 @@ export default function Tarifs() {
       {/* Carnets de séances */}
       <section className="py-16 bg-white px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8">
-            Carnets de séances – Coaching en groupe
-          </h2>
+          <h2 className="text-2xl font-bold text-center mb-8">Carnets de séances – Coaching en groupe</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {groupPack.map((pack) => (
               <div
                 key={pack.label}
                 className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
               >
-                <h3 className="text-lg font-semibold mb-2 text-center">
-                  {pack.label}
-                </h3>
-                <p className="text-2xl font-bold text-[#F97316] mb-1 text-center">
-                  {pack.price}
-                </p>
-                <p className="text-gray-600 text-sm text-center">
-                  {pack.info}
-                </p>
+                <h3 className="text-lg font-semibold mb-2 text-center">{pack.label}</h3>
+                <p className="text-2xl font-bold text-[#F97316] mb-1 text-center">{pack.price}</p>
+                <p className="text-gray-600 text-sm text-center">{pack.info}</p>
               </div>
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold text-center mb-8">
-            Carnets de séances – Accès libre
-          </h2>
+          <h2 className="text-2xl font-bold text-center mb-8">Carnets de séances – Accès libre</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {freePack.map((pack) => (
               <div
                 key={pack.label}
                 className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
               >
-                <h3 className="text-lg font-semibold mb-2 text-center">
-                  {pack.label}
-                </h3>
-                <p className="text-2xl font-bold text-[#F97316] mb-1 text-center">
-                  {pack.price}
-                </p>
-                <p className="text-gray-600 text-sm text-center">
-                  {pack.info}
-                </p>
+                <h3 className="text-lg font-semibold mb-2 text-center">{pack.label}</h3>
+                <p className="text-2xl font-bold text-[#F97316] mb-1 text-center">{pack.price}</p>
+                <p className="text-gray-600 text-sm text-center">{pack.info}</p>
               </div>
             ))}
           </div>

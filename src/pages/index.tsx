@@ -1,5 +1,3 @@
-// pages/index.tsx
-
 import Layout from "@/components/Layout";
 import Image from "next/image";
 import ImageCarousel from "@/components/ImageCarousel";
@@ -187,6 +185,68 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Offre Transformation Illimitée */}
+      <section className="py-16 bg-gradient-to-r from-orange-100 to-orange-50 text-center px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#F97316] mb-4">
+            💎 Offre Transformation Illimitée
+          </h2>
+          <p className="text-gray-700 mb-6">
+            Accédez à <strong>toutes nos séances en illimité</strong> et bénéficiez d’un
+            suivi nutrition personnalisé chaque mois. Le pack le plus complet pour des
+            résultats rapides et durables !
+          </p>
+          <ul className="space-y-2 text-lg text-gray-700 mb-6 text-left max-w-md mx-auto">
+            <li>✅ Accès illimité à toutes les séances de coaching sportif</li>
+            <li>✅ Première consultation nutrition incluse (valeur 60 €)</li>
+            <li>✅ 1 suivi nutrition mensuel (valeur 35 €)</li>
+            <li>✅ Un vrai accompagnement sport + alimentation</li>
+          </ul>
+          <p className="text-2xl font-bold text-[#F97316] mb-2">99 €/mois</p>
+          <p className="text-gray-600 mb-6">
+            Valeur réelle : <s>154 €/mois</s> →{" "}
+            <span className="font-semibold">99 €/mois seulement</span>
+          </p>
+          <span className="inline-block bg-yellow-300 text-yellow-900 font-semibold px-4 py-1 rounded-full mb-4">
+            ⭐ Offre recommandée
+          </span>
+          <br />
+          <Link
+            href="/contact"
+            className="inline-block bg-[#F97316] text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition"
+          >
+            Je demande ma séance d’essai
+          </Link>
+        </div>
+      </section>
+
+      {/* Aperçu des autres formules */}
+      <section className="py-12 bg-white text-center px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold mb-6">Autres formules disponibles</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
+              <h3 className="text-lg font-semibold mb-2">Coaching en groupe</h3>
+              <p className="text-gray-700">À partir de <strong>34,99 €/mois</strong></p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
+              <h3 className="text-lg font-semibold mb-2">Accès libre</h3>
+              <p className="text-gray-700">À partir de <strong>24,99 €/mois</strong></p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
+              <h3 className="text-lg font-semibold mb-2">Carnets de séances</h3>
+              <p className="text-gray-700">Dès <strong>10 €</strong> la séance</p>
+            </div>
+          </div>
+          <Link
+            href="/tarifs"
+            className="inline-block mt-8 bg-[#F97316] text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition"
+          >
+            Voir tous nos tarifs
+          </Link>
+        </div>
+      </section>
+
       {/* Galerie */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 text-center mb-8">
@@ -240,7 +300,7 @@ export default function Home() {
             La salle Body Transformation se situe au <strong>10 rue Jules Védrines, 64600 Anglet</strong>, à 2 minutes de la route de Bayonne.
           </p>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.7576427571485!2d-1.5024630073617393!3d43.46565669662544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd513f2801289467%3A0x986ff976103f3ae0!2sBody%20Transformation%20-%20salle%20de%20sport%20Anglet!5e0!3m2!1sfr!2sfr!4v1748587477563!5m2!1sfr!2sfr" // Remplace par l'URL complète de Google Maps
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.7576427571485!2d-1.5024630073617393!3d43.46565669662544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd513f2801289467%3A0x986ff976103f3ae0!2sBody%20Transformation%20-%20salle%20de%20sport%20Anglet!5e0!3m2!1sfr!2sfr!4v1748587477563!5m2!1sfr!2sfr"
             width="100%"
             height="300"
             className="rounded-lg border-0"
